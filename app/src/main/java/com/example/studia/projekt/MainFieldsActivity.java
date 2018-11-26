@@ -37,14 +37,12 @@ public class MainFieldsActivity extends AppCompatActivity {
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         AppDatabase database = AppDatabase.getInstance(getApplicationContext());
 
         listView = findViewById(R.id.fieldRecordsList); //field records list to nazwa list view
 
         userId = getIntent().getIntExtra("userId", 0);
-
-
 
         database.fieldRecordDao().findFieldRecordsByUserId(userId).observe(this,
                 new Observer<List<FieldRecords>>() {

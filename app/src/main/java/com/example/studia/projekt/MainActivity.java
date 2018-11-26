@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     userId = getIntent().getIntExtra("userId", 0);
 
-    database.fieldDao().findFieldRecordsByUserId(userId).observe(this,
+    database.fieldDao().findFieldRecordsByFieldId(userId).observe(this,
         new Observer<List<FieldRecord>>() {
           @Override
           public void onChanged(@Nullable List<FieldRecord> fieldRecords) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle(); // odczytywanie id klikniętego rekordu ?
-        b.putInt("fieldId", item.getRecordId());
+        b.putInt("fieldId", item.getSingleFieldId());
         b.putInt("userId", item.getFieldId());
         intent.putExtras(b);
         finish();

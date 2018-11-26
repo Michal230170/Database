@@ -14,9 +14,9 @@ public interface FieldsDao {
   void insert(FieldRecord record);
 
   @Query("SELECT * FROM fieldrecords WHERE fieldId=:id")
-  LiveData<List<FieldRecord>> findFieldRecordsByUserId(int id);
+  LiveData<List<FieldRecord>> findFieldRecordsByFieldId(int id);
 
-  @Query("SELECT * FROM fieldrecords WHERE recordId=:id")
+  @Query("SELECT * FROM fieldrecords WHERE singleFieldId=:id")
   LiveData<FieldRecord> getFieldRecordById(int id);
 
 }

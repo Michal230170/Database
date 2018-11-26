@@ -12,7 +12,7 @@ public class FieldRecord {
 
   //foreign key muszą być intami
   @PrimaryKey(autoGenerate = true)
-  private int recordFieldsId;
+  private int singleFieldId;
   private String date;
   private String area;
   private String plant;
@@ -33,9 +33,9 @@ public class FieldRecord {
     this.fieldId = fieldId;
   }
 
-  public FieldRecord(int recordFieldsId, String date, String area, String plant, String substance,
+  public FieldRecord(int singleFieldId, String date, String area, String plant, String substance,
       String usageReason, String dose, int fieldId) {
-    this.recordFieldsId = recordFieldsId;
+    this.singleFieldId = singleFieldId;
     this.date = date;
     this.area = area;
     this.plant = plant;
@@ -45,12 +45,12 @@ public class FieldRecord {
     this.fieldId = fieldId;
   }
 
-  public int getRecordId() {
-    return recordFieldsId;
+  public int getSingleFieldId() {
+    return singleFieldId;
   }
 
-  public void setRecordId(int recordFieldsId) {
-    this.recordFieldsId = recordFieldsId;
+  public void setSingleFieldId(int singleFieldId) {
+    this.singleFieldId = singleFieldId;
   }
 
   public String getDate() {
